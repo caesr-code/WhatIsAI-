@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI, Explained — No hype. No nonsense. Just understanding.</title>
+<meta name="description" content="A calm, beginner-friendly hub for learning how artificial intelligence actually works.">
+
+<!-- Fonts: Fraunces for headings, Inter for body text, JetBrains Mono for code & labels -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<div class="app">
+
+  <!-- Mobile nav toggle -->
+  <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="hamburger" aria-hidden="true"></span>
+  </button>
+
+  <div id="sidebar-overlay" class="sidebar-overlay" hidden></div>
+
+  <!-- Sidebar: primary navigation, on-page bookmarks, highlights, archive -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      <div class="sidebar-header">
+        <a href="#/" class="brand" data-route-link>
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">AI, Explained</span>
+        </a>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        </button>
+      </div>
+
+      <label for="search-input" class="visually-hidden">Search articles</label>
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="search-input" type="search" placeholder="Search articles…" autocomplete="off">
+        <div id="search-results" class="search-results" hidden role="listbox" aria-label="Search results"></div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main">
+        <p class="sidebar-label">Menu</p>
+        <ul>
+          <li><a href="#/" data-nav="home" data-route-link>Home</a></li>
+          <li><a href="#/latest" data-nav="latest" data-route-link>Latest Blog</a></li>
+          <li><a href="#/archive" data-nav="archive" data-route-link>Blog Archive</a></li>
+          <li><a href="#/categories" data-nav="categories" data-route-link>Categories</a></li>
+          <li><a href="#/about" data-nav="about" data-route-link>About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Filled dynamically only when reading an article -->
+      <section id="toc-section" class="sidebar-section" hidden>
+        <p class="sidebar-label">On this page</p>
+        <nav id="toc-nav" aria-label="Table of contents"></nav>
+      </section>
+
+      <section id="highlights-section" class="sidebar-section" hidden>
+        <p class="sidebar-label">My highlights</p>
+        <div id="highlights-list"></div>
+      </section>
+
+      <section id="archive-section" class="sidebar-section">
+        <p class="sidebar-label">Blog archive</p>
+        <div id="archive-list" class="archive-list-compact">
+          <p class="muted">Loading posts…</p>
+        </div>
+      </section>
+
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main id="main-content" class="main-content" tabindex="-1">
+    <div id="reading-progress" class="reading-progress" hidden>
+      <div id="reading-progress-bar" class="reading-progress-bar"></div>
+    </div>
+
+    <div id="view-root" class="view-root">
+      <p class="muted" style="padding:3rem;">Loading…</p>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>AI, Explained — a small, calm corner of the internet for learning how AI actually works.</p>
+        <p class="muted">Built with plain HTML, CSS and JavaScript. No tracking, no accounts, no nonsense.</p>
+      </div>
+    </footer>
+  </main>
+
+</div>
+
+<!-- Floating "Highlight" button shown near selected text -->
+<button id="highlight-toolbar" class="highlight-toolbar" hidden type="button">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l3.5-1L18 8.5l-3.5-3.5L4 15.5 3 19z"/></svg>
+  Highlight
+</button>
+
+<!-- Live region for lightweight status messages (errors, confirmations) -->
+<div id="status-region" class="visually-hidden" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
