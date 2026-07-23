@@ -1,9 +1,10 @@
+---
 title: "Worth The Cost? Or Not The Cost?"
 date: "2026-07-23"
 description: "The current AI model race is getting ridiculous. But with so many powerful models available, which ones are actually worth paying for?"
 category: "AI Models"
 author: "Edward"
-----------------
+---
 
 AI is getting expensive.
 
